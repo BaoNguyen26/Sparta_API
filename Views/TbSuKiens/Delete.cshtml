@@ -1,0 +1,47 @@
+﻿@model API.Sparta.Models.TbSuKien
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div class="content">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <a asp-action="Index" class="btn btn-sm btn-primary"><i class="fa fa-reply"></i></a><strong>Quản lý sự kiện</strong>
+                    </div>
+                    <div class="card-body card-block">
+                        <div class="form-horizontal">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="SukienId" />
+                            <div class="form-group">
+                                <label asp-for="SukienNgaygio" class="control-label">Thời gian</label>
+                                <br />
+                                @Html.DisplayFor(model => model.SukienNgaygio)
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="SukienDiachi" class="control-label">Địa điểm</label><br />
+                                @Html.DisplayFor(model => model.SukienDiachi)
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="SukienMota" for="textarea-input" class=" form-control-label">Mô tả</label><br />
+                                @Html.DisplayFor(model => model.SukienMota)
+                            </div>
+                            <div class="card-footer text-right">
+                                <form asp-action="Delete">
+                                    <input type="hidden" asp-for="SukienId" />
+                                    <input type="submit" value="Delete" class="btn btn-danger" /> |
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

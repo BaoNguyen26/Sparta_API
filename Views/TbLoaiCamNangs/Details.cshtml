@@ -1,0 +1,24 @@
+﻿@model API.Sparta.Models.TbLoaiCamNang
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TbLoaiCamNang</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LoaicamnangTieude)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LoaicamnangTieude)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.LoaicamnangId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

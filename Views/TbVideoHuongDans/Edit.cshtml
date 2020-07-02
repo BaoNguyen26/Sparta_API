@@ -1,0 +1,44 @@
+﻿@model API.Sparta.Models.TbVideoHuongDan
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TbVideoHuongDan</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="VideohuongdanId" />
+            <div class="form-group">
+                <label asp-for="VideohuongdanTieude" class="control-label"></label>
+                <input asp-for="VideohuongdanTieude" class="form-control" />
+                <span asp-validation-for="VideohuongdanTieude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VideohuongdanHinhanh" class="control-label"></label>
+                <input asp-for="VideohuongdanHinhanh" class="form-control" />
+                <span asp-validation-for="VideohuongdanHinhanh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VideohuongdanLinkvideo" class="control-label"></label>
+                <input asp-for="VideohuongdanLinkvideo" class="form-control" />
+                <span asp-validation-for="VideohuongdanLinkvideo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

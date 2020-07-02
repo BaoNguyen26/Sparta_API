@@ -1,0 +1,72 @@
+﻿@model API.Sparta.Models.TbLienHe
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TbLienHe</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LienheCoso)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LienheCoso)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LienheTencose)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LienheTencose)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LienheDiachi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LienheDiachi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LienheDienthoai)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LienheDienthoai)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LienheEmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LienheEmail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LienheLinkfb)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LienheLinkfb)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LienheLinktw)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LienheLinktw)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LienheLinkin)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LienheLinkin)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LienheLinkgmap)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LienheLinkgmap)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.LienheId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

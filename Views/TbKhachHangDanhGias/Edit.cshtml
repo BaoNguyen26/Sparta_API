@@ -1,0 +1,99 @@
+﻿@model API.Sparta.Models.TbKhachHangDanhGia
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+    <div class="content">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <a asp-action="Index" class="btn btn-sm btn-primary"><i class="fa fa-reply"></i></a><strong>Đánh giá của khách hàng</strong>
+                        </div>
+                        <form asp-action="Edit" asp-antiforgery="true" enctype="multipart/form-data">
+                            <div class="card-body card-block">
+                                <div class="form-horizontal">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <input type="hidden" asp-for="KhachhangdanhgiaId" />
+                                    <div class="form-group">
+                                        <label asp-for="KhachhangdanhgiaTenkh" class="control-label">Tên khách hàng</label>
+                                        <input asp-for="KhachhangdanhgiaTenkh" class="form-control" />
+                                        <span asp-validation-for="KhachhangdanhgiaTenkh" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="KhachhangdanhgiaNghenghiep" class="control-label">Nghề nghiệp</label>
+                                        <input asp-for="KhachhangdanhgiaNghenghiep" class="form-control" />
+                                        <span asp-validation-for="KhachhangdanhgiaNghenghiep" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="KhachhangdanhgiaHinhanh" class=" form-control-label">Hình ảnh</label>
+                                        <br />
+                                        <input asp-for="KhachhangdanhgiaHinhanh" class="form-control" style="display:none" />
+                                        <img asp-for="SlideImage" src="@Html.DisplayFor(Model => Model.KhachhangdanhgiaHinhanh)" />
+                                        <input type="file" asp-for="KhachhangdanhgiaHinhanh" class="form-control" src="@Html.DisplayFor(Model => Model.KhachhangdanhgiaHinhanh)" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label asp-for="KhachhangdanhgiaNoidung" for="textarea-input" class=" form-control-label">Nội dung</label>
+                                        <textarea asp-for="KhachhangdanhgiaNoidung" class="form-control" rows="9"></textarea>
+                                        <span asp-validation-for="KhachhangdanhgiaNoidung" class="text-danger"></span>
+                                    </div>
+                                    <div class="card-footer text-right">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary" value="Save">
+                                                <i class="fa fa-save"></i>Lưu
+                                            </button>
+                                            <button type="reset" class="btn btn-danger">
+                                                <i class="fa fa-undo"></i>Hủy
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@*<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="KhachhangdanhgiaId" />
+            <div class="form-group">
+                <label asp-for="KhachhangdanhgiaTenkh" class="control-label"></label>
+                <input asp-for="KhachhangdanhgiaTenkh" class="form-control" />
+                <span asp-validation-for="KhachhangdanhgiaTenkh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KhachhangdanhgiaNghenghiep" class="control-label"></label>
+                <input asp-for="KhachhangdanhgiaNghenghiep" class="form-control" />
+                <span asp-validation-for="KhachhangdanhgiaNghenghiep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KhachhangdanhgiaHinhanh" class="control-label"></label>
+                <input asp-for="KhachhangdanhgiaHinhanh" class="form-control" />
+                <span asp-validation-for="KhachhangdanhgiaHinhanh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KhachhangdanhgiaNoidung" class="control-label"></label>
+                <input asp-for="KhachhangdanhgiaNoidung" class="form-control" />
+                <span asp-validation-for="KhachhangdanhgiaNoidung" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

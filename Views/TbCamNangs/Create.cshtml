@@ -1,0 +1,77 @@
+﻿@model API.Sparta.Models.TbCamNang
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="content">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <a asp-action="Index" class="btn btn-sm btn-primary"><i class="fa fa-reply"></i></a><strong>Quản lý Slide</strong>
+                    </div>
+                    <div class="card-body card-block">
+                        <div class="form-horizontal">
+                            <form asp-action="Create" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label asp-for="LoaicamnangId" class="control-label">Danh mục cẩm nang</label>
+                                    <select id="_dskhoahoc" asp-for="LoaicamnangId" data-placeholder="Danh mục cẩm nang..." class="standardSelect" tabindex="1">
+                                       
+                                    </select>
+                                    <span asp-validation-for="LoaicamnangId" class="text-danger"></span>
+                                </div>
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="CamnangTieude" class="control-label">Tiêu đề</label>
+                                    <input asp-for="CamnangTieude" class="form-control" />
+                                    <span asp-validation-for="CamnangTieude" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="CamnangHinhanh" class="control-label">Hình ảnh</label>
+                                    <input type="file" asp-for="CamnangHinhanh" class="form-control" />
+                                    <span asp-validation-for="CamnangHinhanh" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="CamnangNoidung" class="control-label">Nội dung</label>
+                                    <textarea asp-for="CamnangNoidung" class="form-control" rows="7"></textarea>
+                                    <span asp-validation-for="CamnangNoidung" class="text-danger"></span>
+                                </div>
+                                <div class="card-footer text-right">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary" value="Create">
+                                            <i class="fa fa-save"></i>Lưu
+                                        </button>
+                                        <button type="reset" class="btn btn-danger">
+                                            <i class="fa fa-undo"></i>Hủy
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    fetch("/api/TbLoaiCamNangs1").then(
+        res => {
+            res.json().then(
+                data => {
+                    var htmlinport = '';
+                    console.log(data);
+                    jQuery.each(data, (i, item) => {
+                        htmlinport += "<option value='" + item.loaicamnangId + "'>" + item.loaicamnangTieude + "</option>";
+                    });
+                    jQuery("#_dskhoahoc").append("<option value='0'>Danh mục</option>" + htmlinport);
+                })
+        });
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

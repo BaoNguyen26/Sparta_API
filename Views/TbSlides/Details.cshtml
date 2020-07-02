@@ -1,0 +1,42 @@
+﻿@model API.Sparta.Models.TbSlide
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TbSlide</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SlideTieude)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SlideTieude)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SlideMota)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SlideMota)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SlideImage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SlideImage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SlideLink)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SlideLink)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.SlideId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

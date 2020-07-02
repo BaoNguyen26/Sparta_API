@@ -1,0 +1,54 @@
+﻿@model API.Sparta.Models.TbGioiThieu
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TbGioiThieu</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GioithieuTieude)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GioithieuTieude)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GioithieuMota)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GioithieuMota)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GioithieuNoidung)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GioithieuNoidung)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GioithieuLink)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GioithieuLink)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GioithieuHinhanh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GioithieuHinhanh)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GioithieuNgaytao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GioithieuNgaytao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.GioithieuId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

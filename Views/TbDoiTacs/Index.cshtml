@@ -1,0 +1,47 @@
+﻿@model IEnumerable<API.Sparta.Models.TbDoiTac>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DoitacTen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoitacMota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoitacHinhanh)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoitacTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoitacMota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoitacHinhanh)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DoitacId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DoitacId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DoitacId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

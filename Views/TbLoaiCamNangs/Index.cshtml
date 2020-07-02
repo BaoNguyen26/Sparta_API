@@ -1,0 +1,72 @@
+﻿@model IEnumerable<API.Sparta.Models.TbLoaiCamNang>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="content">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body d-flex align-items-center">
+                        <h4 class="box-title mr-3">Quản lý loại cẩm nang</h4>
+                        <a asp-action="Create" class="btn btn-primary"><i class="fa fa-plus"></i>Thêm</a>
+                        <div class="search-name ml-2">
+                            <label for="inputPassword2" class="sr-only">Seach...</label>
+                            <input type="text" class="form-control" placeholder="Tìm kiếm..." />
+                            <button type="submit" class="btn btn-primary ml-2">
+                                Tìm kiếm
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body--">
+                        <div class="table-stats order-table ov-h">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th class="avatar">STT</th>
+                                        <th class="avatar">Tiêu đề</th>
+                                        <th>#</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        int stt = 0;
+                                    }
+                                    @foreach (var item in Model)
+                                    {
+                                        stt = stt + 1;
+                                        <tr>
+                                            <td class="tdl-holder">
+                                                <label>
+                                                    <input type="checkbox"><i class="check-box"></i>
+                                                </label>
+                                            </td>
+                                            <td>
+                                                @stt
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.LoaicamnangTieude)
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-hdong btn-edit" asp-action="Edit" asp-route-id="@item.LoaicamnangId">
+                                                    <i class="fa fa-pencil"></i>
+                                                </a>
+                                                &nbsp;<a class="btn btn-hdong btn-delete" asp-action="Delete" asp-route-id="@item.LoaicamnangId">
+                                                    <i class="fa fa-close"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

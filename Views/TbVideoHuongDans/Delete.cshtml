@@ -1,0 +1,39 @@
+﻿@model API.Sparta.Models.TbVideoHuongDan
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TbVideoHuongDan</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VideohuongdanTieude)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VideohuongdanTieude)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VideohuongdanHinhanh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VideohuongdanHinhanh)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VideohuongdanLinkvideo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VideohuongdanLinkvideo)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="VideohuongdanId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

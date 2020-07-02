@@ -1,0 +1,49 @@
+﻿@model API.Sparta.Models.TbCamNang
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div class="content">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <a asp-action="Index" class="btn btn-sm btn-primary"><i class="fa fa-reply"></i></a><strong>Bài viết cẩm nang</strong>
+                    </div>
+                    <div class="card-body card-block">
+                        <div class="form-horizontal">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="CamnangId" />
+                            <div class="form-group">
+                                <label asp-for="CamnangTieude" class="control-label">Tiêu đề</label>
+                                <br />
+                                @Html.DisplayFor(model => model.CamnangTieude)
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CamnangHinhanh" class=" form-control-label">Hình ảnh</label>
+                                <br />
+                                <img asp-for="SlideImage" src="@Html.DisplayFor(Model => Model.CamnangHinhanh)" />
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CamnangNoidung" class="control-label">Nội dung</label><br />
+                                @Html.DisplayFor(model => model.CamnangNoidung)
+                            </div>
+                            <div class="card-footer text-right">
+                                <form asp-action="Delete">
+                                    <input type="hidden" asp-for="CamnangId" />
+                                    <input type="submit" value="Delete" class="btn btn-danger" /> |
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,63 @@
+﻿@model API.Sparta.Models.TbCamNang
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="content">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <a asp-action="Index" class="btn btn-sm btn-primary"><i class="fa fa-reply"></i></a><strong>Bài viết cẩm nang</strong>
+                    </div>
+                    <form asp-action="Edit" asp-antiforgery="true" enctype="multipart/form-data">
+                        <div class="card-body card-block">
+                            <div class="form-horizontal">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <input type="hidden" asp-for="CamnangId" />
+                                <div class="form-group">
+                                    <label asp-for="CamnangTieude" class="control-label">Tiêu đề</label>
+                                    <input asp-for="CamnangTieude" class="form-control" />
+                                    <span asp-validation-for="CamnangTieude" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="CamnangHinhanh" class=" form-control-label">Hình ảnh</label>
+                                    <br />
+                                    <input asp-for="CamnangHinhanh" class="form-control" style="display:none" />
+                                    <img asp-for="SlideImage" src="@Html.DisplayFor(Model => Model.CamnangHinhanh)" />
+                                    <input type="file" asp-for="CamnangHinhanh" class="form-control" src="@Html.DisplayFor(Model => Model.CamnangHinhanh)" />
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="CamnangNoidung" for="textarea-input" class=" form-control-label">Nội dung</label>
+                                    <textarea asp-for="CamnangNoidung" class="form-control" rows="9"></textarea>
+                                    @*<textarea asp-for="CamnangNoidung" name="textarea-input" id="textarea-input" rows="9" placeholder="Editor Content..." class="form-control"></textarea>*@
+                                    <span asp-validation-for="CamnangNoidung" class="text-danger"></span>
+                                    @*<div class="form-group btn btn-primary">
+                                            <input type="submit" value="Save" class="btn btn-primary" />
+                                        </div>*@
+                                </div>
+                                <div class="card-footer text-right">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary" value="Save">
+                                            <i class="fa fa-save"></i>Lưu
+                                        </button>
+                                        <button type="reset" class="btn btn-danger">
+                                            <i class="fa fa-undo"></i>Hủy
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*  *@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

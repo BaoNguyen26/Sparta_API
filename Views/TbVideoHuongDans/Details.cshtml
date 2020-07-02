@@ -1,0 +1,36 @@
+﻿@model API.Sparta.Models.TbVideoHuongDan
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TbVideoHuongDan</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VideohuongdanTieude)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VideohuongdanTieude)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VideohuongdanHinhanh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VideohuongdanHinhanh)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VideohuongdanLinkvideo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VideohuongdanLinkvideo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.VideohuongdanId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

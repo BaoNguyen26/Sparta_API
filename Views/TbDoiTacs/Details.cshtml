@@ -1,0 +1,36 @@
+﻿@model API.Sparta.Models.TbDoiTac
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TbDoiTac</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DoitacTen)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DoitacTen)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DoitacMota)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DoitacMota)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DoitacHinhanh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DoitacHinhanh)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DoitacId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
